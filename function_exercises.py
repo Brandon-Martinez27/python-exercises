@@ -216,6 +216,7 @@ def remove_vowels(string):
 remove_vowels('the string does not exist')
 
 
+
 # ## 10. Define a function named normalize_name. It should accept a string and return a valid python identifier, that is:
 # - anything that is not a valid python identifier should be removed
 # - leading and trailing whitespace should be removed
@@ -227,91 +228,6 @@ remove_vowels('the string does not exist')
 #     - % Completed will become completed
 
 # In[201]:
-
-
-string = '   brand marz '
-print(string)
-if string[0] == ' ':
-    string = string.replace(string[0], '')
-    
-for s in string[1:-1]:
-        if s == ' ':
-            string = string[1:-1].replace(' ', '_')
-
-if string[-1] == ' ':
-    string = string[-1].replace(string[-1], '')
-    
-print(string)
-
-
-# In[177]:
-
-
-def normalize_name(string):
-    for s in string[1:-1]:
-        if s == ' ':
-            string = string[1:-1].replace(' ', '_')
-    
-    if string[0] == ' ':
-        string = string.replace(string[0], '')
-    
-    if string[-1] == ' ':
-        string = string.replace(string[-1], '')
-    
-    string = string.lower()
-    
-    return string
-
-
-# In[181]:
-
-
-# leading and trailing whitespace should be removed
-if string[0] == ' ':
-    string = string.replace(' ', '')
-    
-if string[-1] == ' ':
-    string = string.replace(' ', '')
-
-
-# In[ ]:
-
-
-# spaces should be replaced with underscores
-for s in string[1:-1]:
-        if s == ' ':
-            string = string.replace(' ', '_')
-
-
-# In[ ]:
-
-
-# anything that is not a valid python identifier should be removed
-
-# - cannot start with a number
-while string[0].isdigit():
-        string = string.replace(string[0], '')
-        continue
-    
-# - cannot use keywords
-import keyword
-if string in keyword.kwlist:
-    return print('Cannot use keyword')
-
-
-# - cannot contain special symbols like (!, @, #, $, %, etc.)
-special_char = '[@!#$%^&*()<>?/\|}{~:]'
-for s in string:
-    if s in special_char:
-        string = string.replace(s, '')
-
-
-# In[ ]:
-
-
-# everything should be lowercase
-string = string.lower()
-
 
 # ## 11. Write a function named cumulative_sum that accepts a list of numbers and returns a list that is the cumulative sum of the numbers in the list.
 # - cumulative_sum([1, 1, 1]) returns [1, 2, 3]
