@@ -243,7 +243,7 @@ print(numbers)
 
 
 total_number_of_unread_messages = sum(numbers)
-print(total_of_numbers)
+print(total_number_of_unread_messages)
 
 
 # In[ ]:
